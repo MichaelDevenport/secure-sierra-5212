@@ -20,6 +20,8 @@ module Pinteresting
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Include the authenticity token in remote forms.
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     # Required for Heroku
     config.assets.initialize_on_precompile = false
   end

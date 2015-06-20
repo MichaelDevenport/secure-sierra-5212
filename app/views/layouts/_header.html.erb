@@ -22,6 +22,9 @@
               <span class="glyphicon glyphicon-plus"></span> New Pin
             <% end %>
           </li>
+          <li><%= link_to current_user.name, dock_path %></li>
+          <li><%= link_to "Following", following_feed_path %></li>
+          <li><%= link_to "Users", users_path %></li>
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>

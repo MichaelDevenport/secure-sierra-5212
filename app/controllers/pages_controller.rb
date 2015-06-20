@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def following_feed
+  end
 end

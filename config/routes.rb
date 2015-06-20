@@ -1,10 +1,15 @@
 Pinteresting::Application.routes.draw do
   resources :pins
-
   devise_for :users
   root "pins#index"
   get "about" => "pages#about" # creates about_path
-  
+  get "following_feed" => "feed#index"
+  get "dock" => "users#dock"
+  get "users" => "users#index"
+  get "users/:id/pins" => "users#pins", :as => :user_pins
+  get "users/:id/following" => "users#following", :as => :following_user
+  get "users/:id/followers" => "users#followers", :as => :followers_user
+  resources :relationships, only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
